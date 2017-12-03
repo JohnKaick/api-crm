@@ -3,7 +3,7 @@ const router = express.Router();
 
 const ctrl = require('./../controllers/empresa')
 
-router.get('/', async function (req, res, next) {
+router.get('/obter-todos', async function (req, res, next) {
     try {
         const result = await ctrl.obterTodos()
         res.send(result)
@@ -12,7 +12,7 @@ router.get('/', async function (req, res, next) {
     }
 });
 
-router.get('/:id', async function (req, res, next) {
+router.get('obter/:id', async function (req, res, next) {
     try {
         const result = await ctrl.obter(req.params.id)
         res.send(result)
@@ -21,7 +21,7 @@ router.get('/:id', async function (req, res, next) {
     }
 });
 
-router.put('/', async function (req, res, next) {
+router.put('cadastrar/:id', async function (req, res, next) {
     try {
         const result = await ctrl.cadastrar(req.body)
         res.send(result)
@@ -30,7 +30,7 @@ router.put('/', async function (req, res, next) {
     }
 });
 
-router.post('/:id', async function (req, res, next) {
+router.post('editar/:id', async function (req, res, next) {
     try {
         const result = await ctrl.editar(req.params.id, req.body)
         res.send(result)
@@ -39,7 +39,7 @@ router.post('/:id', async function (req, res, next) {
     }
 });
 
-router.delete('/:id', async function (req, res, next) {
+router.delete('deletar/:id', async function (req, res, next) {
     try {
         const result = await ctrl.deletar(req.params.id)
         res.send(result)

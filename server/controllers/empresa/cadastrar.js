@@ -10,7 +10,6 @@ module.exports = async function (data) {
         categoria: data.categoria || 'Cliente em potencial',
         jornada: data.jornada || 'Conhece',
         origem: data.origem || 'Outros',
-        responsavel: data.responsavel || null,
         telefone: data.telefone,
         website: data.website,
         descricao: data.descricao
